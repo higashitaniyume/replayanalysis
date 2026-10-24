@@ -287,7 +287,7 @@ export function decodeReplay(buffer: ArrayBuffer | Uint8Array, fileName: string,
       WinnerText: BigInt(winner) > 0n ? `获胜方 ${winner}` : '未记录获胜方', BossName: boss ? name('monsters', number(boss.HeroId), '怪物') : '—',
       AwardsText: awards.length ? awards.join(' · ') : '未记录奖励', WarningCount: 0 },
     players, events: [], relics: [], shops: [], frames: [],
-    monsters: [], monsterTileSteps: [], monsterSummary: { total: 0, defeated: 0, alive: 0, spawnTile: 0, tileSpawned: 0, tileDefeated: 0, steps: 0 },
+    monsters: [], monsterTileSteps: [], monsterSummary: { total: 0, defeated: 0, alive: 0, spawnTile: 0, tileSpawned: 0, tileDefeated: 0, steps: 0, tileSteps: 0 },
     statistics: { commands: [], actions: [], relicQualities: [] }, warnings,
   }
   const commandCounts = new Map<string, number>(), actionCounts = new Map<string, number>(), qualityCounts = new Map<string, number>()
@@ -513,6 +513,7 @@ export function decodeReplay(buffer: ArrayBuffer | Uint8Array, fileName: string,
     tileSpawned: report.monsters.filter(monster => monster.SpawnedByMonsterTile).length,
     tileDefeated: report.monsters.filter(monster => monster.SpawnedByMonsterTile && monster.StatusKey === 'defeated').length,
     steps: report.monsterTileSteps.length,
+    tileSteps: report.monsterTileSteps.filter(step => step.MonsterIds.length > 0).length,
   }
   for (const player of players) { const ids = selected.get(String(player.Id)) ?? []; player.SelectedRelicCount = ids.length; player.SelectedRelicsText = ids.map(relicName).join('、'); player.SelectedRelics = ids.map(Id => ({ Id, Name: relicName(Id), Quality: quality(Id) })) }
   for (const visit of visits.values()) report.shops.push(shopRecord(visit))
@@ -528,5 +529,6 @@ export function decodeReplay(buffer: ArrayBuffer | Uint8Array, fileName: string,
     : []
   return report
 }
+
 
 

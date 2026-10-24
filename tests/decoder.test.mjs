@@ -125,6 +125,7 @@ test('decoder attributes a same-snapshot monster spawn to the spawn-tile step', 
   assert.equal(report.monsterSummary.steps, 1)
   assert.equal(report.monsterSummary.tileSpawned, 1)
   assert.equal(report.monsterSummary.tileDefeated, 1)
+  assert.equal(report.monsterSummary.tileSteps, 1)
   const spawned = report.monsters.find((item) => item.Id === '5001')
   assert.ok(spawned)
   assert.equal(spawned.SpawnedByMonsterTile, true)

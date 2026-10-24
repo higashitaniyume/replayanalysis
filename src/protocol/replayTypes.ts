@@ -116,6 +116,7 @@ export interface MonsterSummary {
   tileSpawned: number
   tileDefeated: number
   steps: number
+  tileSteps: number
 }
 
 export interface TimelineEvent {
