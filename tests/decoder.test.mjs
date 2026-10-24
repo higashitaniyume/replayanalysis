@@ -134,7 +134,7 @@ test('decoder attributes a same-snapshot monster spawn to the spawn-tile step', 
   assert.equal(spawned.KillerName, '测试二号')
 })
 
-test('staying on the spawn tile does not count as another step', () => {
+test('landing without a monster refresh is not recorded', () => {
   const replay = frameStream([
     [1003, messageField(1, room({ round: 1, playerNode: 1 }))],
     [1113, snapshot(11, room({ round: 1, playerNode: 0 }))],
@@ -142,8 +142,9 @@ test('staying on the spawn tile does not count as another step', () => {
     [1113, snapshot(11, room({ round: 3, playerNode: 0 }))],
   ])
   const report = decodeReplay(replay, 'synthetic')
-  assert.equal(report.monsterTileSteps.length, 1)
-  assert.equal(report.monsterTileSteps[0].Round, 1)
+  assert.equal(report.monsterTileSteps.length, 0)
+  assert.equal(report.monsterSummary.steps, 0)
+  assert.equal(report.monsterSummary.tileSpawned, 0)
 })
 
 test('includeFrames keeps per-frame metadata for callers that ask for it', () => {

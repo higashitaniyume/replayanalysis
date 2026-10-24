@@ -318,7 +318,6 @@ export function decodeReplay(buffer: ArrayBuffer | Uint8Array, fileName: string,
       if (countSteps && previous !== undefined && previous !== node && landTypes.get(node) === MONSTER_TILE_LAND_TYPE) {
         const step: MonsterTileStep = { FrameIndex: frame, Round: round, PlayerId: playerId, PlayerName: playerName(playerId), NodeId: node, MonsterIds: [], MonsterCount: 0 }
         steps.push(step)
-        report.monsterTileSteps.push(step)
       }
       lastPlayerNodes.set(playerId, node)
     }
@@ -363,6 +362,7 @@ export function decodeReplay(buffer: ArrayBuffer | Uint8Array, fileName: string,
       monster.SpawnedByMonsterTile = true
     }
     target.MonsterCount = target.MonsterIds.length
+    report.monsterTileSteps.push(target)
   }
   observeLands(initial)
   observePlayers(initial, 0, initialRound, false)
@@ -529,6 +529,7 @@ export function decodeReplay(buffer: ArrayBuffer | Uint8Array, fileName: string,
     : []
   return report
 }
+
 
 
 
