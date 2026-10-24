@@ -6,7 +6,6 @@ services:
     ports:
       - "${HOST_PORT:-8080}:8080"
     environment:
-      REPLAY_API_BASE_URL: "${REPLAY_API_BASE_URL:-https://replaydownload.hiynet.com}"
       DECODE_WORKERS: "${DECODE_WORKERS:-4}"
       MAX_DECODE_QUEUE: "${MAX_DECODE_QUEUE:-128}"
       CACHE_MAX_BYTES: "${CACHE_MAX_BYTES:-268435456}"

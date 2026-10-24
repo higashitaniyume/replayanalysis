@@ -8,12 +8,24 @@ const httpAgent = new http.Agent({ keepAlive: true, maxSockets: config.upstreamC
 const httpsAgent = new https.Agent({ keepAlive: true, maxSockets: config.upstreamConcurrency })
 const gate = new Semaphore(config.upstreamConcurrency, config.maxUpstreamQueue)
 
+/**
+ * Official replay CDN roots. The project downloads directly from the game's CDN;
+ * it does not depend on the APW/replay-proxy website.
+ * Indices match GameLogic.ReplayLogic.ChangeReplayCDNUrl.
+ */
+const CDN_BASES: Record<ServerEndpoint['key'], string> = {
+  jpdev: 'https://sereplayjp.feimogames.com/dev/',
+  jpprod: 'https://sereplayjp.feimogames.com/prod/',
+  cndev: 'https://sereplaycn.feimogames.com/dev/',
+  cnprod: 'https://sereplaycn.feimogames.com/prod/',
+}
+
 export function upstreamStats() {
   return gate.stats()
 }
 
 export function replayUrl(server: ServerEndpoint['key'], id: string): string {
-  return `${config.upstreamBase}/v1/replay/${id}?server=${server}`
+  return CDN_BASES[server] + id
 }
 
 /** Download a replay with a hard byte cap and a bounded connection pool. */

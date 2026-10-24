@@ -15,7 +15,6 @@ const defaultWorkers = Math.max(1, Math.min(8, (os.availableParallelism?.() ?? o
 export const config = {
   host: process.env.HOST ?? '0.0.0.0',
   port: integer('PORT', 8080, 1, 65535),
-  upstreamBase: (process.env.REPLAY_API_BASE_URL ?? 'https://replaydownload.hiynet.com').replace(/\/+$/, ''),
   maxReplayBytes: integer('MAX_REPLAY_BYTES', 512 * 1024 * 1024, 1024, 1024 * 1024 * 1024),
   upstreamTimeoutMs: integer('UPSTREAM_TIMEOUT_MS', 30_000, 1_000, 300_000),
   upstreamConcurrency: integer('UPSTREAM_CONCURRENCY', 32, 1, 256),

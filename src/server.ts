@@ -111,7 +111,7 @@ server.on('clientError', (_error, socket) => {
 
 server.listen(config.port, config.host, () => {
   console.log(`replayanalysis listening on http://${config.host}:${config.port} ` +
-    `(workers=${config.decodeWorkers}, upstream=${config.upstreamBase}, servers=${Object.keys(SERVERS).join('/')})`)
+    `(workers=${config.decodeWorkers}, cdn=official, servers=${Object.keys(SERVERS).join('/')})`)
 })
 
 async function shutdown(signal: string): Promise<void> {
