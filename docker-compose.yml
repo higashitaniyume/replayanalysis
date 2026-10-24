@@ -1,0 +1,29 @@
+services:
+  replayanalysis:
+    build: .
+    image: ghcr.io/higashitaniyume/replayanalysis:${REPLAYANALYSIS_VERSION:-latest}
+    restart: unless-stopped
+    ports:
+      - "${HOST_PORT:-8080}:8080"
+    environment:
+      REPLAY_API_BASE_URL: "${REPLAY_API_BASE_URL:-https://replaydownload.hiynet.com}"
+      DECODE_WORKERS: "${DECODE_WORKERS:-4}"
+      MAX_DECODE_QUEUE: "${MAX_DECODE_QUEUE:-128}"
+      CACHE_MAX_BYTES: "${CACHE_MAX_BYTES:-268435456}"
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8080/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      start_period: 10s
+      retries: 3

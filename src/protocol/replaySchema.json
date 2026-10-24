@@ -1,0 +1,8849 @@
+{
+  "Action": [
+    {
+      "number": 1,
+      "name": "Id",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Data",
+      "kind": "Bytes",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Sn",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "NotBro",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ActionGroup": [
+    {
+      "number": 1,
+      "name": "ActionId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "AffirmNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "AffirmIds",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ActionGroup.AffirmIdsEntry"
+    }
+  ],
+  "ActionGroup.AffirmIdsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ActionInfo": [
+    {
+      "number": 1,
+      "name": "Sn",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "UseTime",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ActivityInfo": [
+    {
+      "number": 1,
+      "name": "InfoId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Condition",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ActivityInfo.ConditionEntry"
+    },
+    {
+      "number": 6,
+      "name": "TaskRewardIs",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "Condition1",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ActivityInfo.Condition1Entry"
+    }
+  ],
+  "ActivityInfo.Condition1Entry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ConditionData"
+    }
+  ],
+  "ActivityInfo.ConditionEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ActivityPass": [
+    {
+      "number": 1,
+      "name": "DefId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Gear",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "AdditionAttribute": [
+    {
+      "number": 1,
+      "name": "Attack",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Defense",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Harm",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "MovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "NextMovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "UniqueId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "Count1",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "AbandonCardCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "Mark",
+      "kind": "Message",
+      "repeated": false,
+      "target": "AttrMarkInfo"
+    },
+    {
+      "number": 11,
+      "name": "MaxHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "SkillCd",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "UseCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "ExtraParam",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "CardDistance",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "CanCounter",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 17,
+      "name": "NoMove",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "IsLaugh",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 19,
+      "name": "ExtraParam1",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 20,
+      "name": "CardAtk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 21,
+      "name": "AddBattleMaxCost",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 101,
+      "name": "SkillAppendMovePoint2",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "AltArtCardInfo": [
+    {
+      "number": 1,
+      "name": "CardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CardFaceId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "AttrMarkInfo": [
+    {
+      "number": 1,
+      "name": "Type",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Mark1",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "MarkByHeroId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BaseLand": [
+    {
+      "number": 1,
+      "name": "NodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "LandType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsCloudPoint",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "IsRemote",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Battle": [
+    {
+      "number": 1,
+      "name": "BattleId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Attacker",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BattleRole"
+    },
+    {
+      "number": 3,
+      "name": "Defender",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BattleRole"
+    },
+    {
+      "number": 4,
+      "name": "CardUseState",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Battle.CardUseStateEntry"
+    },
+    {
+      "number": 5,
+      "name": "IsEnd",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "IfNoWinMustDie",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "IsPursuit",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "FightBack",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "SkillPlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Battle.CardUseStateEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BattlePass": [
+    {
+      "number": 1,
+      "name": "DefId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Lv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Exp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Gear",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "RewardIds",
+      "kind": "Message",
+      "repeated": true,
+      "target": "BattlePass.RewardIdsEntry"
+    },
+    {
+      "number": 10,
+      "name": "Task",
+      "kind": "Message",
+      "repeated": true,
+      "target": "BattlePass.TaskEntry"
+    },
+    {
+      "number": 11,
+      "name": "TaskRewardIs",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "BattlePass.RewardIdsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BattlePass.TaskEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BattleRole": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Atk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Def",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "UseCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "Point",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "Dodge",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "IncHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Cost",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "DropGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "MaxCost",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "CanNotFightBack",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "HeroId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "AttackBonus",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "ChainAttacker",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "ChainAttackDamage",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 17,
+      "name": "MaxAtk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "MaxDef",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 19,
+      "name": "MinAtk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 20,
+      "name": "MinDef",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 21,
+      "name": "InitAtk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 22,
+      "name": "InitDef",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 23,
+      "name": "CardCombatBonus",
+      "kind": "Message",
+      "repeated": true,
+      "target": "cardCombat"
+    }
+  ],
+  "Bomb": [
+    {
+      "number": 1,
+      "name": "OnwerPlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsOpen",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Buff": [
+    {
+      "number": 1,
+      "name": "UniqueId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "BuffId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Params",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Buff.ParamsEntry"
+    },
+    {
+      "number": 4,
+      "name": "RestoreParams",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Buff.RestoreParamsEntry"
+    },
+    {
+      "number": 5,
+      "name": "KeepRound",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "DelayRound",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "UseTime",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "TargetIds",
+      "kind": "SFixed64",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Priority",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "NodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "Progress",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "RelationId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "IsSakura",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "BuffIndex",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "CanRangeDamage",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "RelativeBuffUids",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Buff.RelativeBuffUidsEntry"
+    },
+    {
+      "number": 49,
+      "name": "Chain",
+      "kind": "Message",
+      "repeated": true,
+      "target": "buff_source"
+    },
+    {
+      "number": 50,
+      "name": "Source",
+      "kind": "Message",
+      "repeated": false,
+      "target": "buff_source"
+    },
+    {
+      "number": 51,
+      "name": "Key",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Buff.ParamsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Buff.RelativeBuffUidsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Buff.RestoreParamsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BuffArray": [
+    {
+      "number": 1,
+      "name": "Buffs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "BuffArray.BuffsEntry"
+    }
+  ],
+  "BuffArray.BuffsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Buff"
+    }
+  ],
+  "BuildingChangeS2C": [
+    {
+      "number": 1,
+      "name": "LandBuildingGuid",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "BuildId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BuildingTriggerS2C": [
+    {
+      "number": 1,
+      "name": "LandBuildingGuid",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BuyRelicC2S": [
+    {
+      "number": 1,
+      "name": "Info",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActionInfo"
+    },
+    {
+      "number": 2,
+      "name": "DivinationGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "RelicGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Select",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Exit",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "BuyRelicS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Select",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Exit",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "CardAtkChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Atk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "CardDistanceChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CurrDistance",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "CardInfo": [
+    {
+      "number": 1,
+      "name": "UniqueId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "PurifyNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "IsTemp",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "BattleCost",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "CauseOrigin": [
+    {
+      "number": 1,
+      "name": "S",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Id",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ChallengeData": [
+    {
+      "number": 1,
+      "name": "GameData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ChallengeData.GameDataEntry"
+    },
+    {
+      "number": 2,
+      "name": "KillData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ChallengeData.KillDataEntry"
+    },
+    {
+      "number": 3,
+      "name": "GameStats",
+      "kind": "Message",
+      "repeated": false,
+      "target": "GameStats"
+    }
+  ],
+  "ChallengeData.GameDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ChallengeData.KillDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ChangeSlotApplyList": [
+    {
+      "number": 1,
+      "name": "ApplyId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "TargetId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "ApplyStatus",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ClientData": [
+    {
+      "number": 1,
+      "name": "GuideData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ClientData.GuideDataEntry"
+    },
+    {
+      "number": 2,
+      "name": "DateChangeData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ClientData.DateChangeDataEntry"
+    },
+    {
+      "number": 3,
+      "name": "SongData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ClientData.SongDataEntry"
+    },
+    {
+      "number": 4,
+      "name": "SettingData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ClientData.SettingDataEntry"
+    },
+    {
+      "number": 5,
+      "name": "NewItemData",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "CampaignTutorialData",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "StarExpression",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "TopExpression",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "ClientData.DateChangeDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ClientData.GuideDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ClientData.SettingDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ClientData.SongDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "SongData"
+    }
+  ],
+  "Clue": [
+    {
+      "number": 1,
+      "name": "ClueId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Targets",
+      "kind": "Message",
+      "repeated": true,
+      "target": "MapMissionTarget"
+    },
+    {
+      "number": 3,
+      "name": "State",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionData": [
+    {
+      "number": 1,
+      "name": "CondType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Params",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionParams"
+    }
+  ],
+  "ConditionParams": [
+    {
+      "number": 1,
+      "name": "Param",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Param1",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo": [
+    {
+      "number": 1,
+      "name": "KillCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "TotalDamage",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "PkDamageMax",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "TotalDie",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "TotalInjured",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "TotalTrap",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "UseTrap",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "UseRoadblock",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Thunder",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "Hospital",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "Lottery",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "KillPvpMonster",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "Gold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "KillThief",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "SakuraCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "TrainCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 17,
+      "name": "HospitalSakuraCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "GoldRelicNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 19,
+      "name": "SinkAllOpponents",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 20,
+      "name": "TransferGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 21,
+      "name": "InitGoldCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 22,
+      "name": "TraitorCardCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 23,
+      "name": "KillPveMonster",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 24,
+      "name": "TreatmentScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 25,
+      "name": "MovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 26,
+      "name": "BattleDiceSixCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 27,
+      "name": "FinalKillBoss",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 28,
+      "name": "SelfDie",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 29,
+      "name": "KillMonsters",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionalInfo.KillMonstersEntry"
+    },
+    {
+      "number": 30,
+      "name": "DragonBallSynthesis",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 31,
+      "name": "SnakeBossMission",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 32,
+      "name": "FishBossMission",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 33,
+      "name": "UseCandyCount",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionalInfo.UseCandyCountEntry"
+    },
+    {
+      "number": 34,
+      "name": "TeammateKillMonster",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionalInfo.TeammateKillMonsterEntry"
+    },
+    {
+      "number": 35,
+      "name": "UseCard",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 36,
+      "name": "UseSkill",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 37,
+      "name": "ActionOverTime",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionalInfo.ActionOverTimeEntry"
+    },
+    {
+      "number": 38,
+      "name": "TeammateStarCoin",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionalInfo.TeammateStarCoinEntry"
+    },
+    {
+      "number": 39,
+      "name": "KillPlayers",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ConditionalInfo.KillPlayersEntry"
+    },
+    {
+      "number": 40,
+      "name": "PlantCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo.ActionOverTimeEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo.KillMonstersEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo.KillPlayersEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo.TeammateKillMonsterEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo.TeammateStarCoinEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ConditionalInfo.UseCandyCountEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "CreditInfo": [
+    {
+      "number": 1,
+      "name": "DeductScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "LastViolationTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "MatchPunishmentTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "LastExemptedTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "LastExemptedActionType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Day7Reward": [
+    {
+      "number": 1,
+      "name": "GoodsId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CreateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "MaxRewardDay",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "RewardDay",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "TodayReward",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FashionPlan": [
+    {
+      "number": 1,
+      "name": "Plan",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Fashion",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FashionPlan.FashionEntry"
+    }
+  ],
+  "FashionPlan.FashionEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FinishAchieve": [
+    {
+      "number": 1,
+      "name": "Type",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FlipCardActivity": [
+    {
+      "number": 1,
+      "name": "Records",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FlipCardActivity.RecordsEntry"
+    },
+    {
+      "number": 2,
+      "name": "ProgressReward",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FlipCardActivity.ProgressRewardEntry"
+    }
+  ],
+  "FlipCardActivity.ProgressRewardEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FlipCardActivity.RecordsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FriendApply": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Time",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "OpType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FriendChatMsgInfo": [
+    {
+      "number": 2,
+      "name": "ReadTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "LastTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FriendInvite": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "RoomId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Time",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "RoomPwd",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "RoomServerId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FriendList": [
+    {
+      "number": 1,
+      "name": "FriendIds",
+      "kind": "SFixed64",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Blacks",
+      "kind": "SFixed64",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Apply",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FriendApply"
+    },
+    {
+      "number": 4,
+      "name": "SelfApply",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FriendSelfApply"
+    },
+    {
+      "number": 5,
+      "name": "DayApplyCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "FriendNotes",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FriendList.FriendNotesEntry"
+    }
+  ],
+  "FriendList.FriendNotesEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "FriendSelfApply": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Time",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GachaCount": [
+    {
+      "number": 1,
+      "name": "Count",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PoolId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "RewardCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GachaRecord": [
+    {
+      "number": 1,
+      "name": "ItemId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ItemCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsConvert",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Time",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GachaRecordList": [
+    {
+      "number": 1,
+      "name": "GachaId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Records",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GachaRecord"
+    },
+    {
+      "number": 3,
+      "name": "PoolId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Count",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "RewardCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Gamble": [
+    {
+      "number": 1,
+      "name": "BaseGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "BetGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Roles",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GambleRole"
+    },
+    {
+      "number": 4,
+      "name": "S",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "IsOdd",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GambleRole": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "HeroId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsDie",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "GoldLack",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "BetGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "GuessCode",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "Point",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "GoldChange",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GameFinishS2C": [
+    {
+      "number": 1,
+      "name": "RoomId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Winer",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "FinishTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Achieve",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FinishAchieve"
+    },
+    {
+      "number": 5,
+      "name": "ActivityId",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "Awards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GameFinishS2C.AwardsEntry"
+    },
+    {
+      "number": 7,
+      "name": "NewAchieve",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GameFinishS2C.NewAchieveEntry"
+    },
+    {
+      "number": 8,
+      "name": "CampScores",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Int32KvPair"
+    },
+    {
+      "number": 9,
+      "name": "RookieBonusAwards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GameFinishS2C.RookieBonusAwardsEntry"
+    },
+    {
+      "number": 10,
+      "name": "ReturnBonusAwards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GameFinishS2C.ReturnBonusAwardsEntry"
+    },
+    {
+      "number": 11,
+      "name": "ReplayId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "Version",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "MapType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "Rank",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GameFinishS2C.RankEntry"
+    }
+  ],
+  "GameFinishS2C.AwardsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GameFinishS2C.NewAchieveEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PlayerFinishAchieve"
+    }
+  ],
+  "GameFinishS2C.RankEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GameFinishS2C.ReturnBonusAwardsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GameFinishS2C.RookieBonusAwardsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GameStats": [
+    {
+      "number": 1,
+      "name": "MaxSingleDamage",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "MaxTotalDamage",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "MaxGetGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "TreatmentScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "TotalTransferGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "TotalDamage",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "TotalDie",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "GuildInvitation": [
+    {
+      "number": 1,
+      "name": "GuildId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "InviterId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "InvitationTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Hero": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "HeroId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "NodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Buffs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.BuffsEntry"
+    },
+    {
+      "number": 5,
+      "name": "Round",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "BeBornNodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "Gold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "Cards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "CardInfo"
+    },
+    {
+      "number": 10,
+      "name": "MovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "FrontNodeIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "BackNodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "UseTime",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "Hp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "Defense",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "Attack",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 17,
+      "name": "BattleId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "Lotterys",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.LotterysEntry"
+    },
+    {
+      "number": 19,
+      "name": "AskPlayerIds",
+      "kind": "SFixed64",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 20,
+      "name": "AppendMovePoint1",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 21,
+      "name": "AppendMovePoint2",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 22,
+      "name": "Bombs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Bomb"
+    },
+    {
+      "number": 23,
+      "name": "MaxHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 24,
+      "name": "IsDoubleThrowDice",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 25,
+      "name": "IsStopRound",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 26,
+      "name": "RealMove",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 27,
+      "name": "IsBigShop",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 28,
+      "name": "BigShopEffectCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 29,
+      "name": "BigShopCombatCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 30,
+      "name": "UserCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 31,
+      "name": "IsControlMovePoint",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 32,
+      "name": "AdditionAttrs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.AdditionAttrsEntry"
+    },
+    {
+      "number": 33,
+      "name": "Lv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 34,
+      "name": "ForceDir",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 35,
+      "name": "LandNoHandle",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 36,
+      "name": "EventTriggerNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 37,
+      "name": "EventIds",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.EventIdsEntry"
+    },
+    {
+      "number": 38,
+      "name": "SkillCds",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.SkillCdsEntry"
+    },
+    {
+      "number": 39,
+      "name": "UseSkillNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 40,
+      "name": "Affirm",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 41,
+      "name": "DevNextEventId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 42,
+      "name": "DevNextDestinyId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 43,
+      "name": "DevNextDivinationId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 44,
+      "name": "BossTargetId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 45,
+      "name": "LastChatTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 46,
+      "name": "StandingPainting",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 47,
+      "name": "Cond",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ConditionalInfo"
+    },
+    {
+      "number": 48,
+      "name": "IsLaunchFight",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 49,
+      "name": "MonsterType",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 50,
+      "name": "ActionWeight",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 52,
+      "name": "SelectRelics",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.SelectRelicsEntry"
+    },
+    {
+      "number": 53,
+      "name": "MonsterIndex",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 54,
+      "name": "DoubleThrowDiceSkill",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 55,
+      "name": "PveHeroStrengthen",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PveHeroStrengthen"
+    },
+    {
+      "number": 56,
+      "name": "BattleCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 57,
+      "name": "ReRollNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 58,
+      "name": "DevMovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 59,
+      "name": "DevAttackPoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 60,
+      "name": "DevDefensePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 61,
+      "name": "TeamId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 62,
+      "name": "SpecialScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 63,
+      "name": "ReviveRoundNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 64,
+      "name": "CureNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 65,
+      "name": "SalaryNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 66,
+      "name": "MarkNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 67,
+      "name": "IsTrial",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 68,
+      "name": "BuyRelicNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 69,
+      "name": "UseCardMaxNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 70,
+      "name": "SkinPendant",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 71,
+      "name": "CardDistance",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 72,
+      "name": "CanCounter",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 73,
+      "name": "CounterNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 74,
+      "name": "ModityNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 75,
+      "name": "NotSelect",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 76,
+      "name": "MoveEffectSkillId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 77,
+      "name": "TimeOutNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 78,
+      "name": "CardDiscount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 79,
+      "name": "DisCardPrice",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 80,
+      "name": "CardIdx",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 81,
+      "name": "DiceWeightIndex",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 82,
+      "name": "LandBuffHandle",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 84,
+      "name": "HasSendChat",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 85,
+      "name": "HasSendPhrase",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 86,
+      "name": "OfflineTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 87,
+      "name": "OfflineType",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 88,
+      "name": "UniqueNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 89,
+      "name": "CardAtk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 90,
+      "name": "EnergyNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 91,
+      "name": "IsSkipRound",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 92,
+      "name": "CrimeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 93,
+      "name": "RoundEffectCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 94,
+      "name": "RoundEffectGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 1000,
+      "name": "DoneActions",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Hero.DoneActionsEntry"
+    },
+    {
+      "number": 1001,
+      "name": "ActionEnd",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 1002,
+      "name": "OnlyUseCard",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Hero.AdditionAttrsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "AdditionAttribute"
+    }
+  ],
+  "Hero.BuffsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Buff"
+    }
+  ],
+  "Hero.DoneActionsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Hero.EventIdsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Hero.LotterysEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Hero.SelectRelicsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Hero.SkillCdsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroAddMoveChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CurrAddMove",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "CurrDecMove",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroAtkChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "CurrAtk",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroAttrEffect": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Gold",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroGoldChangeS2C"
+    },
+    {
+      "number": 3,
+      "name": "Hp",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroHpChangeS2C"
+    },
+    {
+      "number": 4,
+      "name": "Atk",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroAtkChangeS2C"
+    },
+    {
+      "number": 5,
+      "name": "Def",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroDefChangeS2C"
+    },
+    {
+      "number": 6,
+      "name": "Buff",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroBuffChangeS2C"
+    },
+    {
+      "number": 7,
+      "name": "Place",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroPlaceChangeS2C"
+    },
+    {
+      "number": 8,
+      "name": "Lottery",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroLotteryChangeS2C"
+    },
+    {
+      "number": 9,
+      "name": "Card",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCardChangeS2C"
+    },
+    {
+      "number": 10,
+      "name": "Bomb",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroBombChangeS2C"
+    },
+    {
+      "number": 11,
+      "name": "Lv",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroUpLvS2C"
+    },
+    {
+      "number": 12,
+      "name": "Cd",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCdChangeS2C"
+    },
+    {
+      "number": 13,
+      "name": "Reroll",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroReRollChangeS2C"
+    },
+    {
+      "number": 14,
+      "name": "SpecialScore",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroSpecialScoreChangeS2C"
+    },
+    {
+      "number": 15,
+      "name": "CureNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCureNumChangeS2C"
+    },
+    {
+      "number": 16,
+      "name": "SalaryNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroSalaryNumChangeS2C"
+    },
+    {
+      "number": 17,
+      "name": "MarkNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroMarkNumChangeS2C"
+    },
+    {
+      "number": 18,
+      "name": "UseCardNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroUseCardNumChangeS2C"
+    },
+    {
+      "number": 19,
+      "name": "CardDistance",
+      "kind": "Message",
+      "repeated": false,
+      "target": "CardDistanceChangeS2C"
+    },
+    {
+      "number": 20,
+      "name": "CanCounter",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCounterChangeS2C"
+    },
+    {
+      "number": 21,
+      "name": "CounterNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCounterNumChangeS2C"
+    },
+    {
+      "number": 22,
+      "name": "ModifyNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroModifyNumChangeS2C"
+    },
+    {
+      "number": 23,
+      "name": "NotSelect",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroNotSelectS2C"
+    },
+    {
+      "number": 24,
+      "name": "ConvertCard",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCardConvertS2C"
+    },
+    {
+      "number": 25,
+      "name": "Disappear",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroDisappearS2C"
+    },
+    {
+      "number": 26,
+      "name": "Combine",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PveBossCombineS2C"
+    },
+    {
+      "number": 27,
+      "name": "AddMove",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroAddMoveChangeS2C"
+    },
+    {
+      "number": 28,
+      "name": "UniqueNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroUniqueNumChangeS2C"
+    },
+    {
+      "number": 29,
+      "name": "AddTerm",
+      "kind": "Message",
+      "repeated": false,
+      "target": "RoomHeroTriggerAddTermS2C"
+    },
+    {
+      "number": 30,
+      "name": "CardAtk",
+      "kind": "Message",
+      "repeated": false,
+      "target": "CardAtkChangeS2C"
+    },
+    {
+      "number": 31,
+      "name": "EnergyNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroEnergyNumChangeS2C"
+    },
+    {
+      "number": 32,
+      "name": "CrimeNum",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroCrimeNumChangeS2C"
+    },
+    {
+      "number": 33,
+      "name": "LandTypeChange",
+      "kind": "Message",
+      "repeated": false,
+      "target": "LandTypeChangeS2C"
+    },
+    {
+      "number": 34,
+      "name": "BuildingChange",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BuildingChangeS2C"
+    },
+    {
+      "number": 35,
+      "name": "BuildingTrigger",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BuildingTriggerS2C"
+    }
+  ],
+  "HeroBar": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "HeroId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Affirm",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "UseAdorn",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "PveLevel",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "IsTrial",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "SkinPendant",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "AffirmedSkin",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "PveTalentId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "GameData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "HeroBar.GameDataEntry"
+    }
+  ],
+  "HeroBar.GameDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroBarBox": [
+    {
+      "number": 1,
+      "name": "Box",
+      "kind": "Message",
+      "repeated": true,
+      "target": "HeroBarBox.BoxEntry"
+    }
+  ],
+  "HeroBarBox.BoxEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroBar"
+    }
+  ],
+  "HeroBombChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Bombs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Bomb"
+    }
+  ],
+  "HeroBuffChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Buff",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Buff"
+    },
+    {
+      "number": 3,
+      "name": "Op",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Buffs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "HeroBuffChangeS2C.BuffsEntry"
+    }
+  ],
+  "HeroBuffChangeS2C.BuffsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Buff"
+    }
+  ],
+  "HeroCardChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Cards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "CardInfo"
+    }
+  ],
+  "HeroCardConvertS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ConvertCards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "CardInfo"
+    }
+  ],
+  "HeroCdChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Cd",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroCounterChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CanCounter",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroCounterNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroCrimeNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroCureNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroDefChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "CurrDef",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroDisappearS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroEnergyNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroGoldChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroHpChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "RealChangeHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "RealHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "MaxHp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "DamageType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Killer",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroLotteryChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Lotterys",
+      "kind": "Message",
+      "repeated": true,
+      "target": "HeroLotteryChangeS2C.LotterysEntry"
+    }
+  ],
+  "HeroLotteryChangeS2C.LotterysEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroMarkNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroModifyNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "IsActionEnd",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroNotSelectS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "NotSelect",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroPlace": [
+    {
+      "number": 1,
+      "name": "NodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "FrontNodeIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "BackNodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroPlaceChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Place",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroPlace"
+    }
+  ],
+  "HeroReRollChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ReRollNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroSalaryNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroSkillMoveEffect": [
+    {
+      "number": 1,
+      "name": "Effects",
+      "kind": "Message",
+      "repeated": true,
+      "target": "UpdateHeroAttrS2C"
+    }
+  ],
+  "HeroSkillMoveEffectS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "EffectData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "HeroSkillMoveEffectS2C.EffectDataEntry"
+    }
+  ],
+  "HeroSkillMoveEffectS2C.EffectDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroSkillMoveEffect"
+    }
+  ],
+  "HeroSpecialScoreChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroUniqueNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "ChangeNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "OriNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "CurrNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroUpLvS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CurrLv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "HeroUseCardNumChangeS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "UseCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "UseCardMaxNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Int32KvPair": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "InviteInfo": [
+    {
+      "number": 1,
+      "name": "Inviter",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "TaskFinishIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "ItemEtc": [
+    {
+      "number": 1,
+      "name": "ItemId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Count",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "LaborActDiceInfo": [
+    {
+      "number": 1,
+      "name": "CurrDice",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "TotalDicePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Item",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ItemEtc"
+    }
+  ],
+  "LandTypeChangeS2C": [
+    {
+      "number": 1,
+      "name": "NodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "OldLandType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "NewLandType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "LightGift": [
+    {
+      "number": 1,
+      "name": "ActivityId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "LightGift_",
+      "kind": "Message",
+      "repeated": true,
+      "target": "LightGift.LightGift_Entry"
+    },
+    {
+      "number": 3,
+      "name": "Rewards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "LightGift.RewardsEntry"
+    }
+  ],
+  "LightGift.LightGift_Entry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "LightGift.RewardsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "LuckyStarMission": [
+    {
+      "number": 1,
+      "name": "DefId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Targets",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "LuckyStarMissionState",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "LuckyStarMissionInfo": [
+    {
+      "number": 1,
+      "name": "LuckyStarMission",
+      "kind": "Message",
+      "repeated": true,
+      "target": "LuckyStarMissionInfo.LuckyStarMissionEntry"
+    }
+  ],
+  "LuckyStarMissionInfo.LuckyStarMissionEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "LuckyStarMission"
+    }
+  ],
+  "MailData": [
+    {
+      "number": 1,
+      "name": "Id",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Title",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Context",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "SendName",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "IsRead",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "IsGetReward",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "CreateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "Rewards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "MailData.RewardsEntry"
+    },
+    {
+      "number": 11,
+      "name": "ExpireTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "StartTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "IsStarMail",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "MailData.RewardsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "MapDelayParam": [
+    {
+      "number": 1,
+      "name": "Params",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Param",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "MapMission": [
+    {
+      "number": 1,
+      "name": "MissionId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Targets",
+      "kind": "Message",
+      "repeated": true,
+      "target": "MapMissionTarget"
+    },
+    {
+      "number": 3,
+      "name": "MissionState",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "ExtraParam",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "LastProgressPlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "MapMissionTarget": [
+    {
+      "number": 1,
+      "name": "TargetType",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "TargetId",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "TargetNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "MissionMod": [
+    {
+      "number": 1,
+      "name": "ActivityTasks",
+      "kind": "Message",
+      "repeated": true,
+      "target": "TaskDSO"
+    },
+    {
+      "number": 2,
+      "name": "LaborActDiceInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "LaborActDiceInfo"
+    }
+  ],
+  "MonsterPursuitS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "NodeId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "FrontIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "BackId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Exit",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PVEShopBuyC2S": [
+    {
+      "number": 1,
+      "name": "Info",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActionInfo"
+    },
+    {
+      "number": 2,
+      "name": "Cards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "FreeCard",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Gold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "AssistGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "BuyCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "AssistPlayer",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "FreeCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "IsRemote",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "Alreadys",
+      "kind": "Bool",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "IsClose",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "IsBot",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "TalentSkillFreeCard",
+      "kind": "Bool",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "DisCountGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PVEShopBuyS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "BuyCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "AssistPlayer",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Cards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Alreadys",
+      "kind": "Bool",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "IsClose",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PayAmountInfo": [
+    {
+      "number": 1,
+      "name": "AgePosition",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Amount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "NextRemindTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PendingTermIds": [
+    {
+      "number": 1,
+      "name": "TermIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "Player": [
+    {
+      "number": 1,
+      "name": "Id",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Nick",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "WaitOffLine",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "OffLine",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "RoomId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "Slot",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "ChangeSlot",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "Progress",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Token",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "Hero",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Hero"
+    },
+    {
+      "number": 11,
+      "name": "BagItems",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ItemEtc"
+    },
+    {
+      "number": 12,
+      "name": "ShopInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PlayerShopInfo"
+    },
+    {
+      "number": 13,
+      "name": "NextOverDayTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "FashionPlan",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FashionPlan"
+    },
+    {
+      "number": 15,
+      "name": "UsePlan",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "GachaCount",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.GachaCountEntry"
+    },
+    {
+      "number": 17,
+      "name": "NextOverMonthTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "NextOverWeekTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 19,
+      "name": "RoleCard",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.RoleCardEntry"
+    },
+    {
+      "number": 20,
+      "name": "IsBot",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 21,
+      "name": "Task",
+      "kind": "Message",
+      "repeated": false,
+      "target": "TaskInfo"
+    },
+    {
+      "number": 22,
+      "name": "IsUpPlayer",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 23,
+      "name": "SaveTime",
+      "kind": "SInt64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 24,
+      "name": "RoomReady",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 25,
+      "name": "Level",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 26,
+      "name": "Exp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 27,
+      "name": "Recharge",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.RechargeEntry"
+    },
+    {
+      "number": 28,
+      "name": "CreateTime",
+      "kind": "SInt64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 29,
+      "name": "CdkGift",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 30,
+      "name": "Mails",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.MailsEntry"
+    },
+    {
+      "number": 31,
+      "name": "MailGenId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 32,
+      "name": "LastServerAllMail",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 34,
+      "name": "ActivityTask",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ActivityInfo"
+    },
+    {
+      "number": 35,
+      "name": "IsDayPlayGame",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 36,
+      "name": "IsDayLogin",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 37,
+      "name": "ShowPlayer",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ShowPlayerInfo"
+    },
+    {
+      "number": 38,
+      "name": "GachaRecords",
+      "kind": "Message",
+      "repeated": true,
+      "target": "GachaRecordList"
+    },
+    {
+      "number": 39,
+      "name": "Day7",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.Day7Entry"
+    },
+    {
+      "number": 40,
+      "name": "CanPraiseMap",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.CanPraiseMapEntry"
+    },
+    {
+      "number": 41,
+      "name": "MonthlyCardRemDays",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 42,
+      "name": "ClientData",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ClientData"
+    },
+    {
+      "number": 43,
+      "name": "Friends",
+      "kind": "Message",
+      "repeated": false,
+      "target": "FriendList"
+    },
+    {
+      "number": 44,
+      "name": "OfflineTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 45,
+      "name": "RoomInvite",
+      "kind": "Message",
+      "repeated": true,
+      "target": "FriendInvite"
+    },
+    {
+      "number": 46,
+      "name": "LoginCheck",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 47,
+      "name": "LoginTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 48,
+      "name": "ScratchCard",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.ScratchCardEntry"
+    },
+    {
+      "number": 49,
+      "name": "WatchRoomId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 50,
+      "name": "BattlePass",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BattlePass"
+    },
+    {
+      "number": 51,
+      "name": "MsgInfos",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.MsgInfosEntry"
+    },
+    {
+      "number": 52,
+      "name": "IsDayPlayPVE",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 53,
+      "name": "WeeklyLimits",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.WeeklyLimitsEntry"
+    },
+    {
+      "number": 54,
+      "name": "MatchingMode",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 55,
+      "name": "PunishmentTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 56,
+      "name": "CampaignPass",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.CampaignPassEntry"
+    },
+    {
+      "number": 57,
+      "name": "SignInReward",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.SignInRewardEntry"
+    },
+    {
+      "number": 58,
+      "name": "PayAmountInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PayAmountInfo"
+    },
+    {
+      "number": 59,
+      "name": "ServerId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 60,
+      "name": "IsDelete",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 61,
+      "name": "LightGift",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.LightGiftEntry"
+    },
+    {
+      "number": 62,
+      "name": "InviteInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "InviteInfo"
+    },
+    {
+      "number": 63,
+      "name": "ChannelType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 64,
+      "name": "PayStarDisc",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.PayStarDiscEntry"
+    },
+    {
+      "number": 65,
+      "name": "RechargeSum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 66,
+      "name": "WinCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 67,
+      "name": "NextChangeNameTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 68,
+      "name": "MissionMod",
+      "kind": "Message",
+      "repeated": false,
+      "target": "MissionMod"
+    },
+    {
+      "number": 69,
+      "name": "DeviceId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 70,
+      "name": "CampScore",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.CampScoreEntry"
+    },
+    {
+      "number": 71,
+      "name": "UnLockDifficulty",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 72,
+      "name": "ActivityTasks",
+      "kind": "Message",
+      "repeated": true,
+      "target": "TaskDSO"
+    },
+    {
+      "number": 73,
+      "name": "RecoupBagItems",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ItemEtc"
+    },
+    {
+      "number": 74,
+      "name": "IsDayPlayPVP",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 75,
+      "name": "DailyPraiseCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 79,
+      "name": "MapModeCount",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.MapModeCountEntry"
+    },
+    {
+      "number": 80,
+      "name": "WinMap",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.WinMapEntry"
+    },
+    {
+      "number": 81,
+      "name": "MatchTeamId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 82,
+      "name": "SteamId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 83,
+      "name": "MergeFlag",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 84,
+      "name": "Plat",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 85,
+      "name": "SingleInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "SingleInfo"
+    },
+    {
+      "number": 86,
+      "name": "ActivityPass",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.ActivityPassEntry"
+    },
+    {
+      "number": 88,
+      "name": "FriendsCdTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 89,
+      "name": "NearFriendsCdTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 90,
+      "name": "FriendBlackCdTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 91,
+      "name": "FriendInviteCdTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 93,
+      "name": "LastLaborDicePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 94,
+      "name": "MapModeWinCount",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.MapModeWinCountEntry"
+    },
+    {
+      "number": 95,
+      "name": "OnlineStatus",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 96,
+      "name": "IsDayPlayLuckyStar",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 97,
+      "name": "IsHarmony",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 98,
+      "name": "AltArtCards",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.AltArtCardsEntry"
+    },
+    {
+      "number": 99,
+      "name": "CreditInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "CreditInfo"
+    },
+    {
+      "number": 100,
+      "name": "SportsMeetInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "SportsMeetInfo"
+    },
+    {
+      "number": 101,
+      "name": "ReturnInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ReturnInfo"
+    },
+    {
+      "number": 102,
+      "name": "UpdateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 103,
+      "name": "MuteTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 104,
+      "name": "FlipCard",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.FlipCardEntry"
+    },
+    {
+      "number": 105,
+      "name": "HarmonyType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 106,
+      "name": "QuestionInfo",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player.QuestionInfoEntry"
+    },
+    {
+      "number": 107,
+      "name": "TagSet",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 108,
+      "name": "TagInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PlayerTagInfo"
+    },
+    {
+      "number": 201,
+      "name": "GuildInfo",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PlayerGuildInfo"
+    },
+    {
+      "number": 1001,
+      "name": "GameServerId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 1002,
+      "name": "RoomServerId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.ActivityPassEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActivityPass"
+    }
+  ],
+  "Player.AltArtCardsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "AltArtCardInfo"
+    }
+  ],
+  "Player.CampScoreEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.CampaignPassEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.CanPraiseMapEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.Day7Entry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Day7Reward"
+    }
+  ],
+  "Player.FlipCardEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "FlipCardActivity"
+    }
+  ],
+  "Player.GachaCountEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "GachaCount"
+    }
+  ],
+  "Player.LightGiftEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "LightGift"
+    }
+  ],
+  "Player.MailsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "MailData"
+    }
+  ],
+  "Player.MapModeCountEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.MapModeWinCountEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.MsgInfosEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "FriendChatMsgInfo"
+    }
+  ],
+  "Player.PayStarDiscEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.QuestionInfoEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "QuestionModel"
+    }
+  ],
+  "Player.RechargeEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "RechargeInfo"
+    }
+  ],
+  "Player.RoleCardEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "RoleCard"
+    }
+  ],
+  "Player.ScratchCardEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ScratchCardRecord"
+    }
+  ],
+  "Player.SignInRewardEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "SignInReward"
+    }
+  ],
+  "Player.WeeklyLimitsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Player.WinMapEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerFightData": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Name",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Lv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Gold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "HeroId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "Slot",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "Rank",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "MapType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "IsGiveUp",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "HeadIcon",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "Background",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "PlayerLevel",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerFightRecord": [
+    {
+      "number": 1,
+      "name": "Time",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Data",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerFightData"
+    },
+    {
+      "number": 3,
+      "name": "ReplayId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Version",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerFinishAchieve": [
+    {
+      "number": 1,
+      "name": "Relics",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "KillCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "TotalDamage",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "TotalDie",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "TotalInjured",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "PvpResultGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "PvpResultLv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "TotalGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "PveTransferGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "WinCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "PkDamageMax",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "TreatmentScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "MovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "BattleDiceSixCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "FinalKillBoss",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerGuildInfo": [
+    {
+      "number": 1,
+      "name": "GuildId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "LastJoinTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "ApplyCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Applications",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerGuildInfo.ApplicationsEntry"
+    },
+    {
+      "number": 5,
+      "name": "Invitations",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerGuildInfo.InvitationsEntry"
+    },
+    {
+      "number": 6,
+      "name": "LastSearchTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "InviteDisabled",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "ReceivedInvitations",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerGuildInfo.ReceivedInvitationsEntry"
+    },
+    {
+      "number": 9,
+      "name": "GuildTasks",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerGuildInfo.GuildTasksEntry"
+    },
+    {
+      "number": 10,
+      "name": "WeeklySign",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerGuildInfo.WeeklySignEntry"
+    },
+    {
+      "number": 11,
+      "name": "CreateBanned",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "MuteEndTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 13,
+      "name": "LastChatTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 14,
+      "name": "NotifyDisabled",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "ExitGuildNotify",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerGuildInfo.ApplicationsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerGuildInfo.GuildTasksEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "TaskDSO"
+    }
+  ],
+  "PlayerGuildInfo.InvitationsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerGuildInfo.ReceivedInvitationsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "GuildInvitation"
+    }
+  ],
+  "PlayerGuildInfo.WeeklySignEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerShopInfo": [
+    {
+      "number": 1,
+      "name": "ShopRandomItem",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerShopInfo.ShopRandomItemEntry"
+    },
+    {
+      "number": 2,
+      "name": "Record",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerShopInfo.RecordEntry"
+    },
+    {
+      "number": 3,
+      "name": "RechargeRecord",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerShopInfo.RechargeRecordEntry"
+    },
+    {
+      "number": 4,
+      "name": "FirstBuy",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerShopInfo.FirstBuyEntry"
+    },
+    {
+      "number": 5,
+      "name": "LastResetTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "LastTransferTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "ShopRookieGift",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerShopInfo.ShopRookieGiftEntry"
+    },
+    {
+      "number": 8,
+      "name": "RechargeGoodsValue",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerShopInfo.FirstBuyEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "RechargeBuyFirst"
+    }
+  ],
+  "PlayerShopInfo.RechargeRecordEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ShopBuyRecord"
+    }
+  ],
+  "PlayerShopInfo.RecordEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ShopBuyRecord"
+    }
+  ],
+  "PlayerShopInfo.ShopRandomItemEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ShopRandomItem"
+    }
+  ],
+  "PlayerShopInfo.ShopRookieGiftEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerTagInfo": [
+    {
+      "number": 1,
+      "name": "HasFirstForceQuit",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "IsLastPveLose",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PlayerVoteInfo": [
+    {
+      "number": 1,
+      "name": "SelectId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Affirm",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Point",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "PredictActionS2C": [
+    {
+      "number": 1,
+      "name": "RoomRound",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Actions",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Action"
+    }
+  ],
+  "PveBossCombineS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CombineType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "BossIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "PveHeroStrengthen": [
+    {
+      "number": 1,
+      "name": "Level",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Exp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Talent",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "QuestionModel": [
+    {
+      "number": 1,
+      "name": "CreateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "State",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "QuickCardRecord": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PrevTargetId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "PrevCardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "TargetId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "CardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "CardExist",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "PrevPlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "QuickCardStack": [
+    {
+      "number": 1,
+      "name": "OriginalPlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "OriginalTargetIds",
+      "kind": "Message",
+      "repeated": true,
+      "target": "QuickCardStack.OriginalTargetIdsEntry"
+    },
+    {
+      "number": 3,
+      "name": "OriginalCardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "History",
+      "kind": "Message",
+      "repeated": true,
+      "target": "QuickCardRecord"
+    }
+  ],
+  "QuickCardStack.OriginalTargetIdsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "RechargeBuyFirst": [
+    {
+      "number": 1,
+      "name": "GoodsId",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "RechargeInfo": [
+    {
+      "number": 1,
+      "name": "Appid",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "GoodsId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "GoodsCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "ItemId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Num",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "TypeDefId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "OperationGoodsID",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "Coupons",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Plat",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "CreateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "DeviceId",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ReplayDieS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "HeroId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "KillerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ReplaySnapshotS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Room",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Room"
+    }
+  ],
+  "ReturnInfo": [
+    {
+      "number": 1,
+      "name": "TriggerTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "EndTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "FreeGiftClaimed",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "SurveyState",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "SignIn",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ReturnSignIn"
+    },
+    {
+      "number": 6,
+      "name": "TriggerCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ReturnSignIn": [
+    {
+      "number": 1,
+      "name": "UnlockDay",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "LastUnlockTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "FreeClaimedDays",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "AdvClaimedDays",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "AdvUnlocked",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "RoleCard": [
+    {
+      "number": 1,
+      "name": "DefId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Exp",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Lv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "UseAdorn",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "IsBreakThrough",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "FightCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "PveStrengthen",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PveHeroStrengthen"
+    },
+    {
+      "number": 8,
+      "name": "Collected",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room": [
+    {
+      "number": 1,
+      "name": "Id",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Name",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Pwd",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "MaxTime",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "MapId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "MasterId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "CreateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "UpdateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "Players",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player"
+    },
+    {
+      "number": 10,
+      "name": "Monsters",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player"
+    },
+    {
+      "number": 11,
+      "name": "State",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 12,
+      "name": "Lands",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.LandsEntry"
+    },
+    {
+      "number": 13,
+      "name": "Predicts",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Action"
+    },
+    {
+      "number": 14,
+      "name": "Round",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 15,
+      "name": "MapDataId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 16,
+      "name": "CombatCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 17,
+      "name": "EffectCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 18,
+      "name": "LastAccessTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 19,
+      "name": "PlayerIdx",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 20,
+      "name": "Buffs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.BuffsEntry"
+    },
+    {
+      "number": 21,
+      "name": "Battle",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Battle"
+    },
+    {
+      "number": 22,
+      "name": "ActionGroup",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActionGroup"
+    },
+    {
+      "number": 23,
+      "name": "LandNoHandle",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 24,
+      "name": "LotteryAward",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 25,
+      "name": "LandBuffs",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.LandBuffsEntry"
+    },
+    {
+      "number": 26,
+      "name": "CardStack",
+      "kind": "Message",
+      "repeated": false,
+      "target": "QuickCardStack"
+    },
+    {
+      "number": 28,
+      "name": "Hall",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Gamble"
+    },
+    {
+      "number": 29,
+      "name": "Box",
+      "kind": "Message",
+      "repeated": false,
+      "target": "HeroBarBox"
+    },
+    {
+      "number": 30,
+      "name": "StartTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 31,
+      "name": "UpgradePlan",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 32,
+      "name": "TimePlan",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 35,
+      "name": "BossTargetGold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 36,
+      "name": "MapType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 37,
+      "name": "SteamLobbyId",
+      "kind": "Fixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 38,
+      "name": "MapEventIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 39,
+      "name": "WaitTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 40,
+      "name": "SpeedType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 41,
+      "name": "MapDelayParam",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.MapDelayParamEntry"
+    },
+    {
+      "number": 42,
+      "name": "WatchCode",
+      "kind": "String",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 43,
+      "name": "WatchPlayers",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Player"
+    },
+    {
+      "number": 44,
+      "name": "TrainCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 45,
+      "name": "ActionTimeOut",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 46,
+      "name": "GameProgress",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 47,
+      "name": "GameMaxProgress",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 48,
+      "name": "Difficulty",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 49,
+      "name": "PveBossActive",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 50,
+      "name": "MapMissions",
+      "kind": "Message",
+      "repeated": true,
+      "target": "MapMission"
+    },
+    {
+      "number": 51,
+      "name": "MonsterAtkAdd",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 52,
+      "name": "MonsterDefAdd",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 55,
+      "name": "MonsterIndex",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.MonsterIndexEntry"
+    },
+    {
+      "number": 56,
+      "name": "PlayerTotalDie",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 57,
+      "name": "IsMatchRoom",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 58,
+      "name": "LevelId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 59,
+      "name": "VictoryCondition",
+      "kind": "Message",
+      "repeated": false,
+      "target": "VictoryCondition"
+    },
+    {
+      "number": 60,
+      "name": "SpecialScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 61,
+      "name": "MapStatus",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.MapStatusEntry"
+    },
+    {
+      "number": 62,
+      "name": "MapIndex",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 63,
+      "name": "MapDifficultyId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 64,
+      "name": "WaitExecEventIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 65,
+      "name": "VoteInfo",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerVoteInfo"
+    },
+    {
+      "number": 66,
+      "name": "SkipStory",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 67,
+      "name": "CampId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 68,
+      "name": "StoryFinish",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.StoryFinishEntry"
+    },
+    {
+      "number": 69,
+      "name": "StoryState",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 70,
+      "name": "ResetWeight",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 71,
+      "name": "RoomLabel",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 72,
+      "name": "MatchTeamIds",
+      "kind": "SFixed64",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 73,
+      "name": "DelayProgressMapEvent",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.DelayProgressMapEventEntry"
+    },
+    {
+      "number": 74,
+      "name": "ChangeSlotApplyList",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ChangeSlotApplyList"
+    },
+    {
+      "number": 75,
+      "name": "SummonBuffIndex",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.SummonBuffIndexEntry"
+    },
+    {
+      "number": 76,
+      "name": "VoteIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 77,
+      "name": "GameLuckyStar",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.GameLuckyStarEntry"
+    },
+    {
+      "number": 78,
+      "name": "RoomTerms",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 79,
+      "name": "RoomTermEvent",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 80,
+      "name": "RoomTermConvertNodes",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 81,
+      "name": "RoomTermMonsterPool",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.RoomTermMonsterPoolEntry"
+    },
+    {
+      "number": 82,
+      "name": "LuckyStarMissionInfo",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.LuckyStarMissionInfoEntry"
+    },
+    {
+      "number": 83,
+      "name": "ChoiceStartTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 84,
+      "name": "RoundDispatchedTerms",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 86,
+      "name": "HeroPendingTerms",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.HeroPendingTermsEntry"
+    },
+    {
+      "number": 87,
+      "name": "GmSetTerm",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 88,
+      "name": "MapClue",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Clue"
+    },
+    {
+      "number": 89,
+      "name": "ClueNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 90,
+      "name": "LandTypeOverride",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.LandTypeOverrideEntry"
+    },
+    {
+      "number": 91,
+      "name": "BuildingGuids",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 92,
+      "name": "Buildings",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.BuildingsEntry"
+    },
+    {
+      "number": 93,
+      "name": "BuildBuffIndex",
+      "kind": "Message",
+      "repeated": true,
+      "target": "Room.BuildBuffIndexEntry"
+    },
+    {
+      "number": 1001,
+      "name": "RoomServerId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.BuffsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Buff"
+    }
+  ],
+  "Room.BuildBuffIndexEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.BuildingsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.DelayProgressMapEventEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.GameLuckyStarEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.HeroPendingTermsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "PendingTermIds"
+    }
+  ],
+  "Room.LandBuffsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BuffArray"
+    }
+  ],
+  "Room.LandTypeOverrideEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.LandsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "BaseLand"
+    }
+  ],
+  "Room.LuckyStarMissionInfoEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "LuckyStarMissionInfo"
+    }
+  ],
+  "Room.MapDelayParamEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "MapDelayParam"
+    }
+  ],
+  "Room.MapStatusEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.MonsterIndexEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.RoomTermMonsterPoolEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.StoryFinishEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "Room.SummonBuffIndexEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "RoomHeroTriggerAddTermS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "TermIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "RunningGameS2C": [
+    {
+      "number": 1,
+      "name": "Room",
+      "kind": "Message",
+      "repeated": false,
+      "target": "Room"
+    }
+  ],
+  "SayPhraseNotifyS2C": [
+    {
+      "number": 1,
+      "name": "Phrase",
+      "kind": "Message",
+      "repeated": false,
+      "target": "TriggerPhrase"
+    }
+  ],
+  "ScratchCardPool": [
+    {
+      "number": 1,
+      "name": "Record",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ScratchCardPool.RecordEntry"
+    }
+  ],
+  "ScratchCardPool.RecordEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ScratchCardRecord": [
+    {
+      "number": 1,
+      "name": "Pool",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ScratchCardRecord.PoolEntry"
+    },
+    {
+      "number": 2,
+      "name": "CurrentPoolId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ScratchCardRecord.PoolEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ScratchCardPool"
+    }
+  ],
+  "SelectRelicC2S": [
+    {
+      "number": 1,
+      "name": "Info",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActionInfo"
+    },
+    {
+      "number": 2,
+      "name": "Relics",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Idx",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "IsReroll",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Lv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "SupLv",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "SelectRelicS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "RelicId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsReroll",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ShopBuyC2S": [
+    {
+      "number": 1,
+      "name": "Info",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActionInfo"
+    },
+    {
+      "number": 2,
+      "name": "Cards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "FreeCard",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Gold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "BuyCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "FreeCardNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "IsRemote",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 8,
+      "name": "Alreadys",
+      "kind": "Bool",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "ShopBuyRecord": [
+    {
+      "number": 1,
+      "name": "Records",
+      "kind": "Message",
+      "repeated": true,
+      "target": "ShopBuyRecord.RecordsEntry"
+    }
+  ],
+  "ShopBuyRecord.RecordsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ShopBuyS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "BuyCards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "Cards",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Alreadys",
+      "kind": "Bool",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "ShopRandomItem": [
+    {
+      "number": 1,
+      "name": "GoodsId",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    }
+  ],
+  "ShowPlayerInfo": [
+    {
+      "number": 1,
+      "name": "StandingPainting",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "AchieveId",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsShowData",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "IsShowFight",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "Record",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerFightRecord"
+    },
+    {
+      "number": 6,
+      "name": "PraiseNum",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 7,
+      "name": "ReplayRecord",
+      "kind": "Message",
+      "repeated": true,
+      "target": "PlayerFightRecord"
+    }
+  ],
+  "SignInReward": [
+    {
+      "number": 1,
+      "name": "ActivityId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "SignInCount",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "UpdateTime",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "SingleInfo": [
+    {
+      "number": 1,
+      "name": "LevelPassIds",
+      "kind": "Message",
+      "repeated": true,
+      "target": "SingleInfo.LevelPassIdsEntry"
+    },
+    {
+      "number": 2,
+      "name": "MaxScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "StageLevelId",
+      "kind": "Message",
+      "repeated": true,
+      "target": "SingleInfo.StageLevelIdEntry"
+    }
+  ],
+  "SingleInfo.LevelPassIdsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "SingleInfo.StageLevelIdEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "SongData": [
+    {
+      "number": 1,
+      "name": "EasyTopScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "EasyCompleteState",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "HardTopScore",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "HardCompleteState",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "SportsMeetInfo": [
+    {
+      "number": 1,
+      "name": "ChallengeData",
+      "kind": "Message",
+      "repeated": true,
+      "target": "SportsMeetInfo.ChallengeDataEntry"
+    },
+    {
+      "number": 2,
+      "name": "PassMapIds",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "IsKnockoutMatch",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "IsFinalMatch",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "SportsMeetInfo.ChallengeDataEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ChallengeData"
+    }
+  ],
+  "SyncRelicsS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 52,
+      "name": "SelectRelics",
+      "kind": "Message",
+      "repeated": true,
+      "target": "SyncRelicsS2C.SelectRelicsEntry"
+    }
+  ],
+  "SyncRelicsS2C.SelectRelicsEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "TaskDSO": [
+    {
+      "number": 1,
+      "name": "Id",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Progress",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Status",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "TaskInfo": [
+    {
+      "number": 1,
+      "name": "ProgressReward",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "IsTeaching",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 6,
+      "name": "WeekCondition",
+      "kind": "Message",
+      "repeated": true,
+      "target": "TaskInfo.WeekConditionEntry"
+    },
+    {
+      "number": 7,
+      "name": "Condition",
+      "kind": "Message",
+      "repeated": true,
+      "target": "TaskInfo.ConditionEntry"
+    },
+    {
+      "number": 8,
+      "name": "TaskRewardIs",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 9,
+      "name": "AchieveRewardIs",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 10,
+      "name": "WeekTaskRewardIs",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 11,
+      "name": "Condition1",
+      "kind": "Message",
+      "repeated": true,
+      "target": "TaskInfo.Condition1Entry"
+    }
+  ],
+  "TaskInfo.Condition1Entry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ConditionData"
+    }
+  ],
+  "TaskInfo.ConditionEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "TaskInfo.WeekConditionEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "ThrowDiceS2C": [
+    {
+      "number": 1,
+      "name": "Vals",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "MovePoint",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "ForceDir",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 5,
+      "name": "IsControlMovePoint",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "TriggerPhrase": [
+    {
+      "number": 1,
+      "name": "ActivePlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "PassivePlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "TriggerType",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "UpdateHeroAttrS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Cause",
+      "kind": "Message",
+      "repeated": false,
+      "target": "CauseOrigin"
+    },
+    {
+      "number": 4,
+      "name": "EffectDatas",
+      "kind": "Message",
+      "repeated": true,
+      "target": "HeroAttrEffect"
+    }
+  ],
+  "VendorBuyCardC2S": [
+    {
+      "number": 1,
+      "name": "Info",
+      "kind": "Message",
+      "repeated": false,
+      "target": "ActionInfo"
+    },
+    {
+      "number": 2,
+      "name": "CardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "Gold",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 4,
+      "name": "IsBuy",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "VendorBuyCardS2C": [
+    {
+      "number": 1,
+      "name": "PlayerId",
+      "kind": "SFixed64",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "IsBuy",
+      "kind": "Bool",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "VictoryCondition": [
+    {
+      "number": 1,
+      "name": "VictoryType",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "VictoryParams",
+      "kind": "SFixed32",
+      "repeated": true,
+      "target": null
+    },
+    {
+      "number": 3,
+      "name": "KillRecord",
+      "kind": "Message",
+      "repeated": true,
+      "target": "VictoryCondition.KillRecordEntry"
+    },
+    {
+      "number": 4,
+      "name": "Star",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "VictoryCondition.KillRecordEntry": [
+    {
+      "number": 1,
+      "name": "Key",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Value",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "buff_source": [
+    {
+      "number": 1,
+      "name": "S",
+      "kind": "Enum",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "Id",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ],
+  "cardCombat": [
+    {
+      "number": 1,
+      "name": "CardId",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    },
+    {
+      "number": 2,
+      "name": "CardBonus",
+      "kind": "SFixed32",
+      "repeated": false,
+      "target": null
+    }
+  ]
+}
