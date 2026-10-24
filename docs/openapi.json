@@ -1,0 +1,490 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "replayanalysis API",
+    "version": "1.0.0",
+    "description": "Download an Astral Party replay by ID and return the parsed report as JSON. The service downloads directly from the official replay CDN and never returns HTML."
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local or self-hosted instance"
+    }
+  ],
+  "paths": {
+    "/query": {
+      "get": {
+        "operationId": "getReplayByQuery",
+        "summary": "Parse a replay by ID",
+        "parameters": [
+          { "$ref": "#/components/parameters/Id" },
+          { "$ref": "#/components/parameters/Server" },
+          { "$ref": "#/components/parameters/IncludeFrames" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Parsed replay report",
+            "headers": {
+              "X-Request-Id": { "schema": { "type": "string" }, "description": "Request identifier, also written to the access log" },
+              "X-Replay-Id": { "schema": { "type": "string" }, "description": "Replay ID" },
+              "X-Replay-Server": { "schema": { "type": "string", "enum": ["cnprod", "cndev", "jpprod", "jpdev"] } },
+              "X-Cache": { "schema": { "type": "string", "enum": ["HIT", "MISS", "COALESCED"] } }
+            },
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ReplayReport" }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/BadRequest" },
+          "404": { "$ref": "#/components/responses/NotFound" },
+          "413": { "$ref": "#/components/responses/TooLarge" },
+          "422": { "$ref": "#/components/responses/Unprocessable" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "503": { "$ref": "#/components/responses/Busy" },
+          "504": { "$ref": "#/components/responses/Timeout" }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "operationId": "getReplayByRoot",
+        "summary": "Parse a replay by ID (same as /query)",
+        "parameters": [
+          { "$ref": "#/components/parameters/Id" },
+          { "$ref": "#/components/parameters/Server" },
+          { "$ref": "#/components/parameters/IncludeFrames" }
+        ],
+        "responses": {
+          "200": {
+            "description": "Parsed replay report",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ReplayReport" }
+              }
+            }
+          },
+          "400": { "$ref": "#/components/responses/BadRequest" },
+          "404": { "$ref": "#/components/responses/NotFound" },
+          "413": { "$ref": "#/components/responses/TooLarge" },
+          "422": { "$ref": "#/components/responses/Unprocessable" },
+          "502": { "$ref": "#/components/responses/UpstreamError" },
+          "503": { "$ref": "#/components/responses/Busy" },
+          "504": { "$ref": "#/components/responses/Timeout" }
+        }
+      }
+    },
+    "/healthz": {
+      "get": {
+        "operationId": "health",
+        "summary": "Service health and queue statistics",
+        "responses": {
+          "200": {
+            "description": "Service status",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["status", "workers", "idle", "queued", "limit", "upstream", "cache"],
+                  "properties": {
+                    "status": { "type": "string", "const": "ok" },
+                    "workers": { "type": "integer" },
+                    "idle": { "type": "integer" },
+                    "queued": { "type": "integer" },
+                    "limit": { "type": "integer" },
+                    "upstream": {
+                      "type": "object",
+                      "properties": {
+                        "active": { "type": "integer" },
+                        "waiting": { "type": "integer" },
+                        "limit": { "type": "integer" }
+                      }
+                    },
+                    "cache": {
+                      "type": "object",
+                      "properties": {
+                        "entries": { "type": "integer" },
+                        "bytes": { "type": "integer" },
+                        "hits": { "type": "integer" },
+                        "misses": { "type": "integer" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "Id": {
+        "name": "id",
+        "in": "query",
+        "required": true,
+        "description": "Replay ID, 1-32 digits",
+        "schema": { "type": "string", "pattern": "^[0-9]{1,32}$" }
+      },
+      "Server": {
+        "name": "server",
+        "in": "query",
+        "required": false,
+        "description": "Replay region. Aliases: 0-3, cn, jp, global, intl, default",
+        "schema": {
+          "type": "string",
+          "default": "cnprod",
+          "enum": ["cnprod", "cndev", "jpprod", "jpdev", "0", "1", "2", "3", "cn", "jp", "global", "intl", "default"]
+        }
+      },
+      "IncludeFrames": {
+        "name": "includeFrames",
+        "in": "query",
+        "required": false,
+        "description": "Include per-frame details. Defaults to false because the payload can be large.",
+        "schema": { "type": "boolean", "default": false }
+      }
+    },
+    "responses": {
+      "BadRequest": {
+        "description": "Invalid id, server or query parameter",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      },
+      "NotFound": {
+        "description": "Replay does not exist on the selected CDN",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      },
+      "TooLarge": {
+        "description": "Replay exceeds the configured byte limit",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      },
+      "Unprocessable": {
+        "description": "Downloaded bytes are not a parseable replay",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      },
+      "UpstreamError": {
+        "description": "Official CDN request failed",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      },
+      "Busy": {
+        "description": "Decode or upstream queue is full",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      },
+      "Timeout": {
+        "description": "Official CDN timed out",
+        "content": { "application/json": { "schema": { "$ref": "#/components/schemas/Error" } } }
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": ["error", "message"],
+        "properties": {
+          "error": { "type": "string" },
+          "message": { "type": "string" }
+        }
+      },
+      "FileInfo": {
+        "type": "object",
+        "required": ["FileName", "FileSizeText"],
+        "properties": {
+          "FileName": { "type": "string" },
+          "FilePath": { "type": "string" },
+          "FileSizeText": { "type": "string" },
+          "Sha256": { "type": "string" }
+        }
+      },
+      "MatchInfo": {
+        "type": "object",
+        "required": ["ReplayId", "GameVersion", "RoomId", "RoomServerId", "MapId", "MapName", "Difficulty", "RoundCount", "TurnCount", "FrameCount", "PlayerDeaths", "DurationText", "ResultText", "WinnerText", "BossName", "AwardsText"],
+        "properties": {
+          "ReplayId": { "type": "string" },
+          "GameVersion": { "type": "string" },
+          "RoomId": { "oneOf": [{ "type": "string" }, { "type": "integer" }] },
+          "RoomServerId": { "type": "integer" },
+          "MapId": { "type": "integer" },
+          "MapName": { "type": "string" },
+          "mapImage": { "type": "string" },
+          "MapType": { "type": "integer" },
+          "Difficulty": { "type": "integer" },
+          "RoundCount": { "type": "integer" },
+          "TurnCount": { "type": "integer" },
+          "FrameCount": { "type": "integer" },
+          "CommandTypeCount": { "type": "integer" },
+          "PlayerDeaths": { "type": "integer" },
+          "GameProgress": { "type": "integer" },
+          "GameMaxProgress": { "type": "integer" },
+          "ProgressText": { "type": "string" },
+          "StartTimeText": { "type": "string" },
+          "FinishTimeText": { "type": "string" },
+          "DurationText": { "type": "string" },
+          "ResultText": { "type": "string" },
+          "WinnerText": { "type": "string" },
+          "BossName": { "type": "string" },
+          "AwardsText": { "type": "string" },
+          "WarningCount": { "type": "integer" }
+        }
+      },
+      "RelicDisplay": {
+        "type": "object",
+        "required": ["Id", "Name", "Quality"],
+        "properties": {
+          "Id": { "type": "integer" },
+          "Name": { "type": "string" },
+          "Quality": { "type": "string" },
+          "image": { "type": "string" }
+        }
+      },
+      "PlayerSummary": {
+        "type": "object",
+        "required": ["Id", "Nickname", "Slot", "AccountLevel", "HeroId", "HeroName", "FinalStatus", "Hp", "MaxHp", "Gold", "Attack", "Defense", "Damage", "Injured", "Kills", "Healing", "MovePoints", "UsedCards", "UsedSkills", "BoughtRelics", "FinalBossKill"],
+        "properties": {
+          "Id": { "oneOf": [{ "type": "string" }, { "type": "integer" }] },
+          "Nickname": { "type": "string" },
+          "Slot": { "type": "integer" },
+          "AccountLevel": { "type": "integer" },
+          "HeroId": { "type": "integer" },
+          "HeroName": { "type": "string" },
+          "avatar": { "type": "string" },
+          "FinalStatus": { "type": "string" },
+          "Hp": { "type": "integer" },
+          "MaxHp": { "type": "integer" },
+          "HpText": { "type": "string" },
+          "Gold": { "type": "integer" },
+          "Attack": { "type": "integer" },
+          "Defense": { "type": "integer" },
+          "Damage": { "type": "integer" },
+          "Injured": { "type": "integer" },
+          "Kills": { "type": "integer" },
+          "Healing": { "type": "integer" },
+          "MovePoints": { "type": "integer" },
+          "UsedCards": { "type": "integer" },
+          "UsedSkills": { "type": "integer" },
+          "TransferGold": { "type": "integer" },
+          "BoughtRelics": { "type": "integer" },
+          "FinalBossKill": { "type": "boolean" },
+          "SelectedRelicCount": { "type": "integer" },
+          "SelectedRelicsText": { "type": "string" },
+          "SelectedRelics": { "type": "array", "items": { "$ref": "#/components/schemas/RelicDisplay" } }
+        }
+      },
+      "PerformancePoint": {
+        "type": "object",
+        "required": ["Round", "Damage", "Transfer", "DamageDelta", "TransferDelta", "Cards", "CardsDelta", "EarnedGold", "CurrentGold", "Deaths", "Kills", "EarnedGoldDelta", "CurrentGoldDelta", "DeathsDelta", "KillsDelta"],
+        "properties": {
+          "Round": { "type": "integer" },
+          "Damage": { "type": "integer" },
+          "Transfer": { "type": "integer" },
+          "DamageDelta": { "type": "integer" },
+          "TransferDelta": { "type": "integer" },
+          "Cards": { "type": "integer" },
+          "CardsDelta": { "type": "integer" },
+          "EarnedGold": { "type": "integer" },
+          "CurrentGold": { "type": "integer" },
+          "Deaths": { "type": "integer" },
+          "Kills": { "type": "integer" },
+          "EarnedGoldDelta": { "type": "integer" },
+          "CurrentGoldDelta": { "type": "integer" },
+          "DeathsDelta": { "type": "integer" },
+          "KillsDelta": { "type": "integer" }
+        }
+      },
+      "DiceRoll": {
+        "type": "object",
+        "required": ["Round", "Values", "MovePoint", "Controlled"],
+        "properties": {
+          "Round": { "type": "integer" },
+          "Values": { "type": "array", "items": { "type": "integer" } },
+          "MovePoint": { "type": "integer" },
+          "Controlled": { "type": "boolean" }
+        }
+      },
+      "PlayerPerformance": {
+        "type": "object",
+        "required": ["PlayerId", "Points", "Dice"],
+        "properties": {
+          "PlayerId": { "type": "string" },
+          "Points": { "type": "array", "items": { "$ref": "#/components/schemas/PerformancePoint" } },
+          "Dice": { "type": "array", "items": { "$ref": "#/components/schemas/DiceRoll" } }
+        }
+      },
+      "TimelineEvent": {
+        "type": "object",
+        "required": ["FrameIndex", "Round", "PlayerId", "PlayerName", "Type", "Title", "Description"],
+        "properties": {
+          "FrameIndex": { "type": "integer" },
+          "Round": { "type": "integer" },
+          "RoundText": { "type": "string" },
+          "PlayerId": { "oneOf": [{ "type": "string" }, { "type": "integer" }] },
+          "PlayerName": { "type": "string" },
+          "Type": { "type": "string" },
+          "Title": { "type": "string" },
+          "Description": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      },
+      "RelicRecord": {
+        "type": "object",
+        "required": ["FrameIndex", "Round", "PlayerId", "PlayerName", "HeroName", "Kind", "RelicName", "Quality", "Source"],
+        "properties": {
+          "FrameIndex": { "type": "integer" },
+          "Round": { "type": "integer" },
+          "PlayerId": { "oneOf": [{ "type": "string" }, { "type": "integer" }] },
+          "PlayerName": { "type": "string" },
+          "HeroName": { "type": "string" },
+          "Kind": { "type": "string" },
+          "Level": { "type": "integer" },
+          "LevelText": { "type": "string" },
+          "RelicId": { "type": "integer" },
+          "RelicName": { "type": "string" },
+          "Quality": { "type": "string" },
+          "OptionsText": { "type": "string" },
+          "Options": { "type": "array", "items": { "$ref": "#/components/schemas/RelicDisplay" } },
+          "Source": { "type": "string" },
+          "RefreshNumber": { "type": "integer" },
+          "IsRefresh": { "type": "boolean" },
+          "RefreshText": { "type": "string" },
+          "image": { "type": "string" },
+          "sourceIcon": { "type": "string" }
+        }
+      },
+      "ShopRecord": {
+        "type": "object",
+        "required": ["FrameIndex", "Round", "PlayerId", "PlayerName", "HeroName", "ShopType", "OptionsText", "PurchaseText"],
+        "properties": {
+          "FrameIndex": { "type": "integer" },
+          "Round": { "type": "integer" },
+          "PlayerId": { "oneOf": [{ "type": "string" }, { "type": "integer" }] },
+          "PlayerName": { "type": "string" },
+          "HeroName": { "type": "string" },
+          "ShopType": { "type": "string" },
+          "OptionsText": { "type": "string" },
+          "Price": { "type": "integer" },
+          "Discount": { "type": "integer" },
+          "PriceText": { "type": "string" },
+          "FreeCard": { "type": "integer" },
+          "FreeCardNum": { "type": "integer" },
+          "Alreadys": { "type": "array", "items": { "type": "boolean" } },
+          "BuyIndices": { "type": "array", "items": { "type": "integer" } },
+          "BoughtText": { "type": "string" },
+          "PurchaseText": { "type": "string" },
+          "IsClosed": { "type": "boolean" },
+          "HasPurchase": { "type": "boolean" },
+          "SoldOutText": { "type": "string" }
+        }
+      },
+      "MonsterRecord": {
+        "type": "object",
+        "required": ["Id", "HeroId", "MonsterName", "SpawnFrameIndex", "SpawnRound", "SpawnNodeId", "SpawnedOnMonsterTile", "SpawnedByMonsterTile", "Hp", "MaxHp", "Attack", "Defense", "LastFrameIndex", "LastRound", "LastNodeId", "Status", "StatusKey"],
+        "properties": {
+          "Id": { "type": "string" },
+          "HeroId": { "type": "integer" },
+          "MonsterName": { "type": "string" },
+          "image": { "type": "string" },
+          "MonsterIndex": { "type": "integer" },
+          "SpawnFrameIndex": { "type": "integer", "description": "-1 when only a death record was captured" },
+          "SpawnRound": { "type": "integer" },
+          "SpawnNodeId": { "type": "integer" },
+          "SpawnLandType": { "type": "integer" },
+          "SpawnLandName": { "type": "string" },
+          "SpawnedOnMonsterTile": { "type": "boolean", "description": "First seen on LandType.Monster, not necessarily triggered by a landing" },
+          "SpawnedByMonsterTile": { "type": "boolean", "description": "Attributed to a spawn-tile landing in the same snapshot" },
+          "Hp": { "type": "integer" },
+          "MaxHp": { "type": "integer" },
+          "Attack": { "type": "integer" },
+          "Defense": { "type": "integer" },
+          "LastFrameIndex": { "type": "integer" },
+          "LastRound": { "type": "integer" },
+          "LastNodeId": { "type": "integer" },
+          "DeathFrameIndex": { "type": "integer" },
+          "DeathRound": { "type": "integer" },
+          "KillerId": { "type": "string" },
+          "KillerName": { "type": "string" },
+          "Status": { "type": "string" },
+          "StatusKey": { "type": "string", "enum": ["alive", "defeated", "left"] }
+        }
+      },
+      "MonsterTileStep": {
+        "type": "object",
+        "required": ["FrameIndex", "Round", "PlayerId", "PlayerName", "NodeId", "MonsterIds", "MonsterCount"],
+        "description": "A landing on a spawn tile that actually produced at least one new monster in the same snapshot.",
+        "properties": {
+          "FrameIndex": { "type": "integer" },
+          "Round": { "type": "integer" },
+          "PlayerId": { "type": "string" },
+          "PlayerName": { "type": "string" },
+          "NodeId": { "type": "integer" },
+          "MonsterIds": { "type": "array", "items": { "type": "string" } },
+          "MonsterCount": { "type": "integer" }
+        }
+      },
+      "MonsterSummary": {
+        "type": "object",
+        "required": ["total", "defeated", "alive", "spawnTile", "tileSpawned", "tileDefeated", "steps", "tileSteps"],
+        "properties": {
+          "total": { "type": "integer", "description": "All observed monsters" },
+          "defeated": { "type": "integer" },
+          "alive": { "type": "integer" },
+          "spawnTile": { "type": "integer", "description": "Monsters first seen on LandType.Monster" },
+          "tileSpawned": { "type": "integer", "description": "Monsters attributed to a landing" },
+          "tileDefeated": { "type": "integer" },
+          "steps": { "type": "integer", "description": "Landings that produced monsters" },
+          "tileSteps": { "type": "integer", "description": "Same as steps; kept for compatibility" }
+        }
+      },
+      "ProtocolFrame": {
+        "type": "object",
+        "required": ["Index", "Offset", "CmdId", "MessageName", "PayloadLength"],
+        "properties": {
+          "Index": { "type": "integer" },
+          "Offset": { "type": "integer" },
+          "OffsetText": { "type": "string" },
+          "CmdId": { "type": "integer" },
+          "MessageName": { "type": "string" },
+          "PayloadLength": { "type": "integer" },
+          "detail": { "type": "string" }
+        }
+      },
+      "StatItem": {
+        "type": "object",
+        "required": ["Name", "Count", "Percent"],
+        "properties": {
+          "Name": { "type": "string" },
+          "Count": { "type": "integer" },
+          "Percent": { "type": "number" },
+          "BarWidth": { "type": "number" },
+          "Detail": { "type": "string" }
+        }
+      },
+      "ReplayStatistics": {
+        "type": "object",
+        "required": ["commands", "actions", "relicQualities"],
+        "properties": {
+          "commands": { "type": "array", "items": { "$ref": "#/components/schemas/StatItem" } },
+          "actions": { "type": "array", "items": { "$ref": "#/components/schemas/StatItem" } },
+          "relicQualities": { "type": "array", "items": { "$ref": "#/components/schemas/StatItem" } }
+        }
+      },
+      "ReplayReport": {
+        "type": "object",
+        "required": ["file", "match", "players", "events", "relics", "shops", "monsters", "monsterTileSteps", "monsterSummary", "frames", "statistics"],
+        "properties": {
+          "performance": { "type": "array", "items": { "$ref": "#/components/schemas/PlayerPerformance" } },
+          "file": { "$ref": "#/components/schemas/FileInfo" },
+          "match": { "$ref": "#/components/schemas/MatchInfo" },
+          "players": { "type": "array", "items": { "$ref": "#/components/schemas/PlayerSummary" } },
+          "events": { "type": "array", "items": { "$ref": "#/components/schemas/TimelineEvent" } },
+          "relics": { "type": "array", "items": { "$ref": "#/components/schemas/RelicRecord" } },
+          "shops": { "type": "array", "items": { "$ref": "#/components/schemas/ShopRecord" } },
+          "monsters": { "type": "array", "items": { "$ref": "#/components/schemas/MonsterRecord" } },
+          "monsterTileSteps": { "type": "array", "items": { "$ref": "#/components/schemas/MonsterTileStep" } },
+          "monsterSummary": { "$ref": "#/components/schemas/MonsterSummary" },
+          "frames": { "type": "array", "items": { "$ref": "#/components/schemas/ProtocolFrame" }, "description": "Empty unless includeFrames=1" },
+          "statistics": { "$ref": "#/components/schemas/ReplayStatistics" },
+          "warnings": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    }
+  }
+}
