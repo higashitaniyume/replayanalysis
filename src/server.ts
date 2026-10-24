@@ -1,4 +1,5 @@
 import http from 'node:http'
+import { createRequestId, writeAccessLog, type AccessContext } from './access.js'
 import { JsonCache } from './cache.js'
 import { config } from './config.js'
 import { DecodePool } from './pool.js'
@@ -17,24 +18,29 @@ function sendJson(res: http.ServerResponse, status: number, body: string, header
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type, Accept',
-    'Access-Control-Expose-Headers': 'X-Replay-Id, X-Replay-Server, X-Cache, Content-Length',
+    'Access-Control-Expose-Headers': 'X-Request-Id, X-Replay-Id, X-Replay-Server, X-Cache, Content-Length',
     'Cache-Control': 'no-store',
     ...headers,
   })
   res.end(payload)
 }
 
-function sendError(res: http.ServerResponse, error: unknown): void {
+function sendError(res: http.ServerResponse, error: unknown, context: AccessContext): void {
   const apiError = error instanceof ApiError
     ? error
     : new ApiError(500, 'internal_error', error instanceof Error ? error.message : String(error))
+  context.errorCode = apiError.code
+  context.errorMessage = apiError.message
+  context.status = apiError.status
   sendJson(res, apiError.status, JSON.stringify({ error: apiError.code, message: apiError.message }))
 }
 
-async function handleQuery(query: Query, res: http.ServerResponse): Promise<void> {
+async function handleQuery(query: Query, res: http.ServerResponse, context: AccessContext): Promise<void> {
+  context.query = { id: query.id, server: query.server, includeFrames: query.includeFrames }
   const cacheKey = `${query.server}:${query.id}:${query.includeFrames ? 1 : 0}`
   const cached = cache.get(cacheKey)
   if (cached !== undefined) {
+    context.cache = 'HIT'
     sendJson(res, 200, cached, {
       'Cache-Control': `public, max-age=${Math.floor(config.cacheTtlMs / 1000)}`,
       'X-Replay-Id': query.id,
@@ -57,16 +63,37 @@ async function handleQuery(query: Query, res: http.ServerResponse): Promise<void
     promise.finally(() => inflight.delete(cacheKey)).catch(() => {})
   }
 
+  context.cache = coalesced ? 'COALESCED' : 'MISS'
   const json = await promise
   sendJson(res, 200, json, {
     'Cache-Control': `public, max-age=${Math.floor(config.cacheTtlMs / 1000)}`,
     'X-Replay-Id': query.id,
     'X-Replay-Server': query.server,
-    'X-Cache': coalesced ? 'COALESCED' : 'MISS',
+    'X-Cache': context.cache,
   })
 }
 
 function handleRequest(req: http.IncomingMessage, res: http.ServerResponse): void {
+  const startedAt = Date.now()
+  const requestId = createRequestId()
+  const context: AccessContext = {}
+  res.setHeader('X-Request-Id', requestId)
+
+  let logged = false
+  const log = () => {
+    if (logged) return
+    logged = true
+    writeAccessLog(req, res, context, startedAt, requestId)
+  }
+  res.on('finish', log)
+  res.on('close', () => {
+    if (!res.writableFinished) {
+      context.aborted = true
+      context.status ??= 499
+      log()
+    }
+  })
+
   void (async () => {
     if (req.method === 'OPTIONS') {
       res.writeHead(204, {
@@ -79,25 +106,35 @@ function handleRequest(req: http.IncomingMessage, res: http.ServerResponse): voi
       return
     }
     if (req.method !== 'GET') {
-      sendJson(res, 405, JSON.stringify({ error: 'method_not_allowed', message: '只支持 GET' }), { Allow: 'GET, OPTIONS' })
+      context.errorCode = 'method_not_allowed'
+      context.errorMessage = '只支持 GET'
+      context.status = 405
+      sendJson(res, 405, JSON.stringify({ error: context.errorCode, message: context.errorMessage }), { Allow: 'GET, OPTIONS' })
       return
     }
 
     const url = new URL(req.url ?? '/', `http://${req.headers.host ?? 'localhost'}`)
     if (url.pathname === '/healthz') {
+      context.health = true
       sendJson(res, 200, JSON.stringify({ status: 'ok', ...pool.stats(), upstream: upstreamStats(), cache: cache.stats() }))
       return
     }
     if (url.pathname !== '/' && url.pathname !== '/query') {
-      sendJson(res, 404, JSON.stringify({ error: 'not_found', message: '只提供 GET / 与 GET /query' }))
+      context.errorCode = 'not_found'
+      context.errorMessage = '只提供 GET / 与 GET /query'
+      context.status = 404
+      sendJson(res, 404, JSON.stringify({ error: context.errorCode, message: context.errorMessage }))
       return
     }
 
     const query = parseQuery(url.searchParams)
-    await handleQuery(query, res)
+    await handleQuery(query, res, context)
   })().catch((error) => {
-    if (!res.headersSent) sendError(res, error)
-    else res.destroy()
+    if (!res.headersSent) sendError(res, error, context)
+    else {
+      context.status ??= res.statusCode
+      res.destroy()
+    }
   })
 }
 
